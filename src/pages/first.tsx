@@ -1,11 +1,11 @@
+import { BackButtons } from "@components/back-buttons";
 import MainLayout from "@layouts/MainLayout";
-import { NavigatorButtons } from "@subsets/home/buttons";
 import React from "react";
 
 const Content = () => {
   return (
     <main>
-      <NavigatorButtons />
+      <BackButtons />
     </main>
   );
 };

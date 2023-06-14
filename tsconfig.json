@@ -24,6 +24,7 @@
       "@layouts/*": ["./src/layouts/*"],
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
+      "@subsets/*": ["./src/subsets/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
