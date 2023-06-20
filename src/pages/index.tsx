@@ -1,11 +1,11 @@
 import MainLayout from "@layouts/MainLayout";
-import { NavigatorButtons } from "@subsets/home/buttons";
+import { Home } from "../subsets/home";
 import React from "react";
 
 const Content = () => {
   return (
     <main>
-      <NavigatorButtons />
+      <Home />
     </main>
   );
 };

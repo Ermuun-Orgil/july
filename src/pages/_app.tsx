@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { ReactElement, ReactNode } from "react";
+import "../styles/global.css"
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -17,7 +18,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <Head>
-        <title>Template project</title>
+        <title>1st July</title>
       </Head>
 
       {getLayout(<Component {...pageProps} />)}
