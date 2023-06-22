@@ -1,11 +1,11 @@
-import { BackButtons } from "@components/back-buttons";
 import MainLayout from "@layouts/MainLayout";
+import { Gallery } from "@subsets/gallery";
 import React from "react";
 
 const Content = () => {
   return (
     <main>
-      <BackButtons />
+      <Gallery />
     </main>
   );
 };
