@@ -1,19 +1,25 @@
-import { Box, Slide, Stack, Typography } from "@mui/material";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { useSpringValue, animated } from '@react-spring/web'
-import { Carousel } from "@components/carousel";
+import { Box } from "@mui/material";
+import React from "react";
+import { useFirestoreCollection } from "@firebase/index";
+import { MomentDataType } from "@types";
+import { Moments } from "./moment";
 
 export const Home = () => {
+  const { loading, data } = useFirestoreCollection<MomentDataType[]>([
+    "moments",
+  ]);
+
+  if (loading) return <Box>Loading..</Box>;
 
   return (
     <Box padding={8}>
-      <Box>
+      {data.map((cur) => (
+        <Box key={cur.id}>
+          <Box>{cur.description}</Box>
 
-      </Box>      
+          <Moments id={cur.id} />
+        </Box>
+      ))}
     </Box>
   );
 };
