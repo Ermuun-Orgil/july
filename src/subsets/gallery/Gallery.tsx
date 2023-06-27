@@ -1,3 +1,6 @@
+import { useFirestoreCollection } from "@firebase/index";
+import { MomentDataType } from "@types";
+import { Moments } from "./moment";
 import { Box, Slide, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -71,11 +74,26 @@ export const Gallery = () => {
   const handleLeft = () => {
     myElementRef.current.scrollLeft = myElementRef.current.scrollLeft - 1000
   };
+  const { loading, data } = useFirestoreCollection<MomentDataType[]>([
+    "moments",
+  ]);
+
+  if (loading) return <Box>Loading..</Box>;
+
 
   return (
-    <Box padding={8}>
+    <Box paddingX={8} paddingTop={12}>
       <Typography variant="h5">2008 оны 7 сарын 1, 2 цаг 24 минут</Typography>
       <Carousel data={dummyData} />
-    </Box>
-  );
+      return (
+      <Box padding={8}>
+        {data.map((cur) => (
+          <Box key={cur.id}>
+            <Box>{cur.description}</Box>
+
+            <Moments id={cur.id} />
+          </Box>
+        ))}
+      </Box>
+      );
 };

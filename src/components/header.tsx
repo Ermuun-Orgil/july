@@ -30,28 +30,31 @@ export const Header = () => {
 
   const pushHome = () => {
     router.push("/");
+    closeMenu();
   };
 
-  const pushAbout = () => {
-    router.push("/about");
+  const pushGallery = () => {
+    router.push("/gallery");
+    closeMenu();
   };
 
   const pushContact = () => {
     router.push("/contact");
+    closeMenu();
   };
 
   return (
     <>
-      <Box display={"flex"} flexDirection={"row"} boxShadow={2} alignItems={"center"} justifyContent={"space-around"}>
+      <Box display={"flex"} flexDirection={"row"} boxShadow={2} alignItems={"center"} justifyContent={"space-around"} position={"fixed"} width={"100vw"} bgcolor={"#FFFFFF"}>
         <h5>1st of July</h5>
         <Stack direction={"row"} spacing={3} display={screenType === "mobile" ? "none" : "flex"}>
           <Typography onClick={pushHome}>Нүүр</Typography>
           <Box borderLeft={1} />
-          <Typography onClick={pushAbout}>Бидний тухай</Typography>
+          <Typography onClick={pushGallery}>Галерей</Typography>
           <Box borderLeft={1} />
           <Typography onClick={pushContact}>Холбоо барих</Typography>
         </Stack>
-        <div onClick={() => setOpen(true)} style={{display: `${screenType === "mobile" ? "block" : "none"}`}}>
+        <div onClick={() => setOpen(true)} style={{ display: `${screenType === "mobile" ? "block" : "none"}` }}>
           <Box border={1} display={"flex"} justifyContent={"center"} alignItems={"center"} borderRadius={2} padding={0.5}>
             <MenuIcon />
           </Box>
@@ -78,15 +81,15 @@ export const Header = () => {
           </Box>
         </div>
         <Stack display={"flex"} alignItems={"center"} spacing={2}>
-          <div onClick={pushHome} style={{width: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
+          <div onClick={pushHome} style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Typography fontSize={30}>Нүүр</Typography>
           </div>
           <Box borderTop={1} width={"100%"} />
-          <div onClick={pushAbout} style={{width: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
-            <Typography fontSize={30}>Бидний тухай</Typography>
+          <div onClick={pushGallery} style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Typography fontSize={30}>Галерей</Typography>
           </div>
           <Box borderTop={1} width={"100%"} />
-          <div onClick={pushContact} style={{width: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
+          <div onClick={pushContact} style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Typography fontSize={30}>Холбоо барих</Typography>
           </div>
         </Stack>
