@@ -8,20 +8,24 @@ import injinaash from "../../assets/illustrations/injinaash.jpeg";
 export const Home = () => {
 
   const [screenType, setScreenType] = useState("window");
+  const [imageWidth, setImageWidth] = useState(100);
   useEffect(() => {
-    const screenWidth = window.innerWidth;
+    const screenWidth: number = window.innerWidth;
+    if(screenWidth > 600)
+      setImageWidth(screenWidth / 2)
     setScreenType(screenWidth > 600 ? "window" : "mobile")
   }, [])
 
   // const julyImg = "../../assets/illustrations/july.JPG"
   const julyScript = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
+
   return (
     <Box paddingX={8} paddingTop={12}>
       <Box>
         <Stack spacing={8}>
           <Stack direction={"row"} spacing={10}>
-            <Image alt="july" src={julyImg} width={800} style={{ objectFit: "contain" }}></Image>
+            <Image alt="july" width={screenType === "window" ? imageWidth : undefined} src={julyImg}></Image>
             <Typography fontSize={18}>{julyScript}</Typography>
           </Stack>
           <Box display={"flex"} justifyContent={"center"}>

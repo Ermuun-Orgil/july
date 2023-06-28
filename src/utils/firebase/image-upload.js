@@ -48,6 +48,8 @@ const uploadImageToFirebase = (dirPath) => {
 
     // Read the image file
     images.forEach((imagePath) => {
+        if (imagePath === '.DS_Store') return;
+
         const imagePos = `${dirPath}/${imagePath}`;
 
         fs.readFile(imagePos, async (error, data) => {
@@ -60,12 +62,12 @@ const uploadImageToFirebase = (dirPath) => {
 
             const downloadURL = await uploadImage(imagePath, imagePos, data);
 
-            const metaData = { imageUrl: downloadURL, name: `${minute}-${second}` }
+            const metaData = { imageUrl: downloadURL, name: `${minute}-${second}`, photoGraphy: "Лхагвасүрэн Элбэгзаяа", photoGraphyEng: "Elbegzaya Lkhagvasuren" }
             await setImageInFirestore(`moments/${date}-${hour}/photos`, `${minute}-${second}`, metaData);
         });
     })
 }
-
-const dirPath = './images';
+// import "../../../../julyPics/elbegzaya"
+const dirPath = '../../../../julyPics/elbegzaya';
 
 uploadImageToFirebase(dirPath);

@@ -74,9 +74,12 @@ export const Gallery = () => {
   const handleLeft = () => {
     myElementRef.current.scrollLeft = myElementRef.current.scrollLeft - 1000
   };
+
   const { loading, data } = useFirestoreCollection<MomentDataType[]>([
     "moments",
   ]);
+
+  console.log(data)
 
   if (loading) return <Box>Loading..</Box>;
 
@@ -85,15 +88,13 @@ export const Gallery = () => {
     <Box paddingX={8} paddingTop={12}>
       <Typography variant="h5">2008 оны 7 сарын 1, 2 цаг 24 минут</Typography>
       <Carousel data={dummyData} />
-      return (
-      <Box padding={8}>
-        {data.map((cur) => (
-          <Box key={cur.id}>
-            <Box>{cur.description}</Box>
+      {data.map((cur) => (
+        <Box key={cur.id}>
+          <Box>{cur.description}</Box>
 
-            <Moments id={cur.id} />
-          </Box>
-        ))}
-      </Box>
-      );
-};
+          <Moments id={cur.id} />
+        </Box>
+      ))}
+    </Box>
+  );
+}
