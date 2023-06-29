@@ -1,9 +1,11 @@
 export interface MomentDataType {
   id: string;
-  imageUrl: string;
+  date: string;
+  hour: string;
+  photos: PhotoDataType[];
 }
 export interface PhotoDataType {
-  image: string;
+  imageUrl: string;
   title: string;
-  id: string;
+  time: string;
 }

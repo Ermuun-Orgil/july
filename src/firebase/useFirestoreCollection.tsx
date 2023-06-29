@@ -19,7 +19,7 @@ export const useFirestoreCollection: <T>(collectionNames: string[]) => {
       id: cur.id,
     }));
 
-    setData(querySnapshot);
+    setData(convertedData);
     setLoading(false);
   };
 
