@@ -1,8 +1,6 @@
 import { useFirestoreCollection } from "@firebase/index";
 import { MomentDataType } from "@types";
 import { Box, Stack, Typography } from "@mui/material";
-import React, { useEffect } from "react";
-import { Carousel } from "@components/carousel";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { useRef, useState } from "react";
