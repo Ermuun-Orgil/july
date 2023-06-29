@@ -1,5 +1,5 @@
 import MainLayout from "@layouts/MainLayout";
-import { Home } from "../subsets/home";
+import { Home } from "@subsets/home";
 import React from "react";
 
 const Content = () => {

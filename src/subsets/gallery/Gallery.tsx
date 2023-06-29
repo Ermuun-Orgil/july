@@ -33,68 +33,26 @@ export const Gallery = () => {
   },
   ];
 
-  const dummy = [
-    {
-      date: "2008/07/01 12:00",
-      photos: [
-        {
-          image: "https://picsum.photos/1063/1375",
-          photographer: "Элбэгзаяа",
-        },
-        {
-          image: "https://picsum.photos/1063/1375",
-          photographer: "Элбэгзаяа",
-        },
-        {
-          image: "https://picsum.photos/1063/1375",
-          photographer: "Элбэгзаяа",
-        },
-        {
-          image: "https://picsum.photos/1063/1375",
-          photographer: "Элбэгзаяа",
-        },
-      ],
-    }
-  ]
+  // const { loading, data } = useFirestoreCollection<MomentDataType[]>([
+  //   "moments",
+  // ]);
 
-  const onPressSecond = () => {
-    router.push("/second");
-  };
+  // console.log(data);
 
-  const handleScroll = () => {
-    const el: any = myElementRef.current;
-    if (el !== null)
-      setPositionLeft(el.scrollLeft);
-  };
-
-  const handleRight = () => {
-    myElementRef.current.scrollLeft = myElementRef.current.scrollLeft + 1000
-  };
-
-  const handleLeft = () => {
-    myElementRef.current.scrollLeft = myElementRef.current.scrollLeft - 1000
-  };
-
-  const { loading, data } = useFirestoreCollection<MomentDataType[]>([
-    "moments",
-  ]);
-
-  console.log(data)
-
-  if (loading) return <Box>Loading..</Box>;
+  // if (loading) return <Box>Loading..</Box>;
 
 
   return (
     <Box paddingX={8} paddingTop={12}>
       <Typography variant="h5">2008 оны 7 сарын 1, 2 цаг 24 минут</Typography>
-      <Carousel data={dummyData} />
-      {data.map((cur) => (
-        <Box key={cur.id}>
-          <Box>{cur.description}</Box>
 
+      <Carousel data={dummyData} />
+
+      {/* {data.map((cur) => (
+        <Box key={cur.id}>
           <Moments id={cur.id} />
         </Box>
-      ))}
+      ))} */}
     </Box>
   );
 }

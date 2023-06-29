@@ -13,7 +13,7 @@ export const Header = () => {
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
-    setScreenType(screenWidth > 600 ? "window" : "mobile")
+    setScreenType(screenWidth > 800 ? "window" : "mobile")
   }, [])
 
   useEffect(() => {
@@ -39,20 +39,20 @@ export const Header = () => {
   };
 
   const pushContact = () => {
-    router.push("/contact");
+    router.push("https://www.facebook.com/gammaphotoagency");
     closeMenu();
   };
 
   return (
     <>
-      <Box display={"flex"} flexDirection={"row"} boxShadow={2} alignItems={"center"} justifyContent={"space-around"} position={"fixed"} width={"100vw"} bgcolor={"#FFFFFF"}>
-        <h5>1st of July</h5>
+      <Box display={"flex"} width={"100%"} flexDirection={"row"} boxShadow={2} alignItems={"center"} justifyContent={"space-around"} position={"fixed"} bgcolor={"#FFFFFF"} zIndex={5} paddingY={1}>
+        <Typography fontSize={25}>Бүү Март</Typography>
         <Stack direction={"row"} spacing={3} display={screenType === "mobile" ? "none" : "flex"}>
-          <Typography onClick={pushHome}>Нүүр</Typography>
+          <Typography sx={{ cursor: "pointer" }} onClick={pushHome}>Нүүр</Typography>
           <Box borderLeft={1} />
-          <Typography onClick={pushGallery}>Галерей</Typography>
+          <Typography sx={{ cursor: "pointer" }} onClick={pushGallery}>Галерей</Typography>
           <Box borderLeft={1} />
-          <Typography onClick={pushContact}>Холбоо барих</Typography>
+          <Typography sx={{ cursor: "pointer" }} onClick={pushContact}>Холбоо барих</Typography>
         </Stack>
         <div onClick={() => setOpen(true)} style={{ display: `${screenType === "mobile" ? "block" : "none"}` }}>
           <Box border={1} display={"flex"} justifyContent={"center"} alignItems={"center"} borderRadius={2} padding={0.5}>
@@ -60,9 +60,10 @@ export const Header = () => {
           </Box>
         </div>
       </Box>
+
       <animated.div
         style={{
-          width: "100vw",
+          width: "100%",
           height: "100vh",
           position: "absolute",
           top: 0,
@@ -71,7 +72,7 @@ export const Header = () => {
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: "#FFFFFF",
-          zIndex: 2,
+          zIndex: 6,
           ...openSprings,
         }}
       >
@@ -82,15 +83,15 @@ export const Header = () => {
         </div>
         <Stack display={"flex"} alignItems={"center"} spacing={2}>
           <div onClick={pushHome} style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Typography fontSize={30}>Нүүр</Typography>
+            <Typography sx={{ cursor: "pointer" }} fontSize={30}>Нүүр</Typography>
           </div>
           <Box borderTop={1} width={"100%"} />
           <div onClick={pushGallery} style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Typography fontSize={30}>Галерей</Typography>
+            <Typography sx={{ cursor: "pointer" }} fontSize={30}>Галерей</Typography>
           </div>
           <Box borderTop={1} width={"100%"} />
           <div onClick={pushContact} style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Typography fontSize={30}>Холбоо барих</Typography>
+            <Typography sx={{ cursor: "pointer" }} fontSize={30}>Холбоо барих</Typography>
           </div>
         </Stack>
       </animated.div>

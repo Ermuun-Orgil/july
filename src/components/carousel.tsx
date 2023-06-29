@@ -25,19 +25,24 @@ export const Carousel: React.FC<CarouselType> = ({ data }) => {
 
     return (
         <Box display={"flex"} flexDirection={"row"} position={"relative"} alignItems={"center"} justifyContent={"space-between"} zIndex={1}>
-            <Box onClick={handleLeft} zIndex={1} position={"absolute"} bgcolor={"rgba(170, 170, 170, 0.8)"} borderRadius={50} display={"flex"} alignItems={"center"} justifyContent={"center"} width={40} height={40} marginLeft={2}>
+            <Box sx={{ cursor: "pointer" }} onClick={handleLeft} zIndex={1} position={"absolute"} bgcolor={"rgba(170, 170, 170, 0.8)"} borderRadius={50} display={"flex"} alignItems={"center"} justifyContent={"center"} width={40} height={40} marginLeft={2}>
                 <ChevronLeftIcon fontSize="large" />
             </Box>
-            <Box onClick={handleRight} zIndex={1} position={"absolute"} bgcolor={"rgba(170, 170, 170, 0.8)"} borderRadius={50} display={"flex"} alignItems={"center"} justifyContent={"center"} width={40} height={40} right={0} marginRight={2}>
+            <Box sx={{ cursor: "pointer" }} onClick={handleRight} zIndex={1} position={"absolute"} bgcolor={"rgba(170, 170, 170, 0.8)"} borderRadius={50} display={"flex"} alignItems={"center"} justifyContent={"center"} width={40} height={40} right={0} marginRight={2}>
                 <ChevronRightIcon fontSize="large" />
             </Box>
             <div onScroll={handleScroll} ref={myElementRef} style={{ display: "flex", overflowX: "scroll", alignItems: "center", position: "relative", justifyContent: "space-between", scrollBehavior: "smooth" }}>
                 <Stack direction={"row"} spacing={2}>
-                    {data.map((e: any, index) => {
-                        return (
-                            <Box onClick={() => console.log("sda")} id={`${index}`} key={index} height={200} width={330} sx={{ backgroundImage: `url(${e.image})`, backgroundPosition: "center", backgroundSize: "cover" }}></Box>
-                        )
-                    })}
+                    {data.map((e: any, index) => (
+                        <Box
+                            onClick={() => console.log("sda")}
+                            id={`${index}`}
+                            key={`image-${index}`}
+                            height={200}
+                            width={330}
+                            sx={{ cursor: "pointer", backgroundImage: `url(${e.image})`, backgroundPosition: "center", backgroundSize: "cover" }}
+                        />
+                    ))}
                 </Stack>
             </div>
         </Box>

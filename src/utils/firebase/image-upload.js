@@ -8,11 +8,11 @@ const path = require('path');
 // Initialize Firebase SDK
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: "july-fa242.firebaseapp.com",
-    projectId: "july-fa242",
-    storageBucket: "july-fa242.appspot.com",
-    messagingSenderId: "126323572587",
-    appId: "1:126323572587:web:ec519db2a5899e1db2562e",
+    authDomain: "july-a9a1f.firebaseapp.com",
+    projectId: "july-a9a1f",
+    storageBucket: "july-a9a1f.appspot.com",
+    messagingSenderId: "53494904497",
+    appId: "1:53494904497:web:a059c13e3cf2552ee25490",
 };
 
 // Initialize Firebase
@@ -52,22 +52,25 @@ const uploadImageToFirebase = (dirPath) => {
 
         const imagePos = `${dirPath}/${imagePath}`;
 
+        console.log(imagePos);
+
         fs.readFile(imagePos, async (error, data) => {
             if (error) return;
 
             const date = imagePath.split('-')[0].replaceAll(';', ':');
+            const day = date.split(":")[2]
             const hour = imagePath.split('-')[1].split(';')[0];
             const minute = imagePath.split('-')[1].split(';')[1];
             const second = imagePath.split('-')[1].split(';')[2].split('.')[0];
 
             const downloadURL = await uploadImage(imagePath, imagePos, data);
 
-            const metaData = { imageUrl: downloadURL, name: `${minute}-${second}`, photoGraphy: "Лхагвасүрэн Элбэгзаяа", photoGraphyEng: "Elbegzaya Lkhagvasuren" }
-            await setImageInFirestore(`moments/${date}-${hour}/photos`, `${minute}-${second}`, metaData);
+            const metaData = { imageUrl: downloadURL, name: `${minute}-${second}`, photography: "Б.Инжинааш" }
+            await setImageInFirestore(`moments/2008:07:${day}-${hour}/photos`, `${minute}-${second}`, metaData);
         });
     })
 }
 // import "../../../../julyPics/elbegzaya"
-const dirPath = '../../../../julyPics/elbegzaya';
+const dirPath = '../../../../julyPics/compressed-injinaash';
 
 uploadImageToFirebase(dirPath);

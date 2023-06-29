@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, query, getDocs, getFirestore } from "firebase/firestore";
 import { firebaseApp } from ".";
 import { useEffect, useState } from "react";
 
@@ -11,17 +11,15 @@ export const useFirestoreCollection: <T>(collectionNames: string[]) => {
 
   const db = getFirestore(firebaseApp);
   const collectionPath = collectionNames.join("/");
-
   const sendRequest = async () => {
     const collectionRef = collection(db, collectionPath);
     const querySnapshot = await getDocs(collectionRef);
-
     const convertedData = querySnapshot.docs.map((cur) => ({
       ...cur.data(),
       id: cur.id,
     }));
 
-    setData(convertedData);
+    setData(querySnapshot);
     setLoading(false);
   };
 

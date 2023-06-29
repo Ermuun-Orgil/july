@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  width: 100%;
+  font-family: "Montserrat-bold";
+}
+
+@font-face {
+  font-family: 'Montserrat-bold';
+  src: url('../assets/fonts/Montserrat/static/Montserrat-Bold.ttf')
+}
+
+@font-face {
+  font-family: 'Montserrat-regular';
+  src: url('../assets/fonts/Montserrat/static/Montserrat-Regular.ttf')
+}
+
+.scroll-item:hover {
+  width: 300;
+  height: 440;
+}
+
+@media (min-width: 768px) {
+  .home-image {
+    max-width: 100;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-image {
+    max-width: 500;
+  }
+}
+
+@media (min-width: 5000px) {
+  .home-image {
+    max-width: 500;
+  }
+}

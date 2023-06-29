@@ -1,7 +1,6 @@
 export interface MomentDataType {
-  description: string;
-  timestamp: Date;
   id: string;
+  imageUrl: string;
 }
 export interface PhotoDataType {
   image: string;
