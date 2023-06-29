@@ -9,3 +9,9 @@ export interface PhotoDataType {
   title: string;
   time: string;
 }
+
+export interface CarouselPopUpType {
+  open: boolean;
+  close: () => void;
+  data: any;
+}

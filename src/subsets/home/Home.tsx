@@ -16,7 +16,6 @@ export const Home = () => {
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
-    console.log(screenWidth);
     setScreenType(screenWidth > 800 ? "window" : "mobile")
   }, [])
   // const julyImg = "../../assets/illustrations/july.JPG"
