@@ -1,7 +1,7 @@
 import { useFirestoreCollection } from "@firebase/index";
 import { MomentDataType } from "@types";
 import { Box, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Carousel } from "@components/carousel";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -13,6 +13,7 @@ export const Gallery = () => {
     "moments",
   ]);
   const [open, setOpen] = useState(false);
+  const [date, setDate] = useState("false");
   const [popupData, setPopupData] = useState({});
   const myElementRef: any = useRef(null);
 
@@ -35,7 +36,7 @@ export const Gallery = () => {
 
   const close = () => {
     setOpen(false);
-}
+  }
 
   if (loading) return <Box>Loading..</Box>;
 
@@ -45,7 +46,7 @@ export const Gallery = () => {
     <Stack paddingX={4} paddingTop={12}>
       {data.map((cur, index) => (
         <Box key={index} marginTop={2}>
-          <Typography variant="h5">{cur.id}</Typography>
+          <Typography variant="h5">{cur.id.split("-")[0].replaceAll(":", "/")}-{cur.id.split("-")[1]} цаг</Typography>
           <Box
             display={"flex"}
             flexDirection={"row"}
