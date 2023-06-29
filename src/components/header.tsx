@@ -46,7 +46,7 @@ export const Header = () => {
   return (
     <>
       <Box display={"flex"} width={"100%"} flexDirection={"row"} boxShadow={2} alignItems={"center"} justifyContent={"space-around"} position={"fixed"} bgcolor={"#FFFFFF"} zIndex={5} paddingY={1}>
-        <Typography fontSize={25}>Бүү Март</Typography>
+        <Typography onClick={pushHome} fontSize={25}>Бүү Март</Typography>
         <Stack direction={"row"} spacing={3} display={screenType === "mobile" ? "none" : "flex"}>
           <Typography sx={{ cursor: "pointer" }} onClick={pushHome}>Нүүр</Typography>
           <Box borderLeft={1} />
@@ -65,7 +65,7 @@ export const Header = () => {
         style={{
           width: "100%",
           height: "100vh",
-          position: "absolute",
+          position: "fixed",
           top: 0,
           left: 0,
           display: `${open ? "flex" : "none"}`,

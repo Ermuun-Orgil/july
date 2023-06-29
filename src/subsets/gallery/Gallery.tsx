@@ -12,7 +12,7 @@ export const Gallery = () => {
   if (loading) return <Box>Loading..</Box>;
 
   return (
-    <Box paddingX={8} paddingTop={12}>
+    <Box paddingX={4} paddingTop={12}>
       <Typography variant="h5">2008 оны 7 сарын 1, 2 цаг 24 минут</Typography>
 
       {data.map((cur) => (

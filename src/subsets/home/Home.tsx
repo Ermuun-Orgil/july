@@ -3,6 +3,10 @@ import Image from 'next/image'
 import julyImg from "../../assets/illustrations/july.JPG";
 import gamma from "../../assets/illustrations/gamma.jpeg";
 import injinaash from "../../assets/illustrations/injinaash.jpeg";
+import elbegzaya from "../../assets/illustrations/elbe.jpeg";
+import byambaochir from "../../assets/illustrations/byambaochir.jpeg";
+import nymagerel from "../../assets/illustrations/nymgerel.jpeg";
+import davaanym from "../../assets/illustrations/davaanaa.jpg";
 import { useEffect, useState } from "react";
 
 const jul = "../../assets/illustrations/july.JPG";
@@ -16,7 +20,17 @@ export const Home = () => {
     setScreenType(screenWidth > 800 ? "window" : "mobile")
   }, [])
   // const julyImg = "../../assets/illustrations/july.JPG"
-  const julyScript = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  const julyScript = "Өдгөөгөөс 15 жилийн өмнөх 7 сарын 1-ний өдөр монголын түүхэнд “хар”-аар бичигдэн үлдсэн билээ. Ардчиллын төлөө өгсөн саналаа нэхсэн залуус тухайн үеийн төр, засаг, цэрэг, цагдаатай тэмцэлдэн, сүүлдээ хууль хүчний өмнө буруутан болж дууссан. Таван залуу алтан амиа алдаж, олон зуун залуус хэрэгтэн болж торны цаана хоригдсон. Энэ түүхэн үнэнийг нэмэлт хачиргүй, хар цагаангүй хүүрнэж чадах ганц зүйл нь гэрэл зураг юм. Гамма агентлагийн гэрэл зургчдын зургуудыг та бүхэнд дэлгэж байна. Та хаана байсан бэ? Өөрийгөө олоорой."
+  const gammaScript1 = "Урьд шөнө хар дарж зүүдэллээ…"
+  const gammaScript2 = "Ардчиллын сүлд дуулал болсон С.Цогтсайханы “Хонхны дуу” ингэж эхэлдэг."
+  const gammaScript3 = "Үнэхээр л бид хар дарсан зүүднээсээ арай ядан сэрэв үү гэмээр байна. Хэний ч хүсээгүй “ХАР МЯГМАР ГАРИГ” буюу 2008.07.01-ний хар өдөр нэгэнт болоод өнгөрчээ!"
+  const gammaScript4 = "Гэхдээ бид мартах ёсгүй."
+  const gammaScript5 = "Энэ өдөр биднийг СЭРЭМЖТЭЙ БАЙХЫГ “ӨГЛӨӨ БОЛГОН” үргэлж санууж байх болно!"
+  const gammaScript6 = "Тийм гэгээн зорилгоор гэрэл зургийн “Гамма” агентлагийн залуу гэрэл зурагчид болох Т.Бямба-Очир, Б.Инжинааш, Д.Давааням, Б.Нямгэрэл, Л.Элбэгзаяа нарын үйл явдлын халуун цэг дээр авсан гэрэл зургуудыг та бүхэнд толилуулж байна."
+  const gammaScript7 = "Өөр өөрсдийнхөө оюун ухаанд тунгаацгаая!"
+  const book = "2008 онд хэвлэгдсэн БҮҮ МАРТ номны хэсгээс"
+  const tsogtbayrName = "Шог зураач С.Цогтбаяр"
+  const elbegzayaName = "Гамма агентлагийн гүйцэтгэх захирал Л.Элбэгзаяа"
 
   return (
     <Box paddingX={5} paddingTop={12} paddingBottom={8}>
@@ -26,7 +40,11 @@ export const Home = () => {
             <Box position={"relative"} height={screenType === "mobile" ? 210 : 500} width={screenType === "window" ? "65%" : "100%"}>
               <Image className="home-image" alt="july" src={julyImg} fill style={{ objectFit: "scale-down" }} />
             </Box>
-            <Typography fontSize={18} flex={1}>{julyScript}</Typography>
+            <Box flex={1}>
+              <Typography fontSize={18} flex={1}>{julyScript}</Typography>
+              <br />
+              <Typography fontSize={18} flex={1} fontWeight={600}>{elbegzayaName}</Typography>
+            </Box>
           </Stack>
 
           <Box display={"flex"} justifyContent={"center"}>
@@ -36,8 +54,24 @@ export const Home = () => {
           <Stack spacing={screenType === "window" ? 8 : 4} direction={screenType === "window" ? "row" : "column"} flexWrap={"wrap"} useFlexGap>
             {screenType === "window" ?
               <>
-                <Typography fontSize={18} flex={1}>{julyScript}</Typography>
-                <Box position={"relative"} height={500} width={"65%"}>
+                <Box flex={1}>
+                  <Typography fontSize={18} flex={1}>{gammaScript1}</Typography>
+                  <Typography fontSize={18} flex={1}>{gammaScript2}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript3}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript4}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript5}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript6}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript7}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{book}</Typography>
+                  <Typography fontSize={18} flex={1} fontWeight={600}>{tsogtbayrName}</Typography>
+                </Box>
+                <Box position={"relative"} height={500} width={"50%"}>
                   <Image className="home-image" alt="july" src={gamma} fill style={{ objectFit: "scale-down" }} />
                 </Box>
               </> :
@@ -45,7 +79,23 @@ export const Home = () => {
                 <Box position={"relative"} height={210} width={"100%"}>
                   <Image className="home-image" alt="july" src={gamma} fill style={{ objectFit: "scale-down" }} />
                 </Box>
-                <Typography fontSize={18} flex={1}>{julyScript}</Typography>
+                <Box flex={1}>
+                  <Typography fontSize={18} flex={1}>{gammaScript1}</Typography>
+                  <Typography fontSize={18} flex={1}>{gammaScript2}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript3}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript4}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript5}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript6}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{gammaScript7}</Typography>
+                  <br />
+                  <Typography fontSize={18} flex={1}>{book}</Typography>
+                  <Typography fontWeight={600} fontSize={18} flex={1}>{tsogtbayrName}</Typography>
+                </Box>
               </>
             }
           </Stack>
@@ -54,25 +104,31 @@ export const Home = () => {
             <Box width={"65%"} borderTop={1} />
           </Box>
 
-          <Stack direction={"row"} spacing={10} flexWrap={"wrap"} useFlexGap>
+          <Stack direction={"row"} spacing={10} flexWrap={"wrap"} useFlexGap display={"flex"} alignItems={"center"}>
             <Box flex={1} display={"flex"} flexDirection={"column"} alignItems={"center"}>
               <Image alt={"injinaash"} src={injinaash} width={150} />
-              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>"Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+              <Typography textAlign={"center"} fontSize={18} marginTop={2}>Чөлөөт уран бүтээлч</Typography>
+              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>Б.Инжинааш</Typography>
             </Box>
-
             <Box flex={1} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-              <Image alt={"injinaash"} src={injinaash} width={150} />
-              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>"Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+              <Image alt={"byambaochir"} src={byambaochir} width={150} />
+              <Typography textAlign={"center"} fontSize={18} marginTop={2}>Чөлөөт уран бүтээлч</Typography>
+              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>Т.Бямба-Очир</Typography>
             </Box>
-
             <Box flex={1} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-              <Image alt={"injinaash"} src={injinaash} width={150} />
-              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>"Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+              <Image alt={"nymgerel"} src={nymagerel} width={150} />
+              <Typography textAlign={"center"} fontSize={18} marginTop={2}>Гамма агентлагийн уран бүтээлч</Typography>
+              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>Б.Нямгэрэл</Typography>
             </Box>
-
             <Box flex={1} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-              <Image alt={"injinaash"} src={injinaash} width={150} />
-              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>"Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+              <Image alt={"davaanym"} src={davaanym} width={150} />
+              <Typography textAlign={"center"} fontSize={18} marginTop={2}>Батзориг сангийн тэргүүн</Typography>
+              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>Д.Давааням</Typography>
+            </Box>
+            <Box flex={1} display={"flex"} flexDirection={"column"} alignItems={"center"}>
+              <Image alt={"elbegzaya"} src={elbegzaya} width={150} />
+              <Typography textAlign={"center"} fontSize={18} marginTop={2}>Гамма агентлагийн уран бүтээлч</Typography>
+              <Typography textAlign={"center"} fontWeight={600} fontSize={18} marginTop={2}>Л.Элбэгзаяа</Typography>
             </Box>
           </Stack>
         </Stack>
