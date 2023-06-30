@@ -3,14 +3,6 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { ReactElement, ReactNode } from "react";
 import "../styles/global.scss"
-import { Montserrat } from 'next/font/google'
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ['400', '600'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-})
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -25,11 +17,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <>
-      <style jsx global>{`
-        html {
-          font-family: ${montserrat.style.fontFamily};
-        }
-      `}</style>
       <Head>
         <title>1st July</title>
       </Head>

@@ -3,6 +3,8 @@ export interface MomentDataType {
   date: string;
   hour: string;
   photos: PhotoDataType[];
+  setPhoto: Function;
+  setOpen: Function;
 }
 export interface PhotoDataType {
   imageUrl: string;

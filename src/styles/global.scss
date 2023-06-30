@@ -1,17 +1,12 @@
 body {
   margin: 0;
   width: 100%;
-  font-family: "Montserrat-bold";
+  font-family: "Lora";
 }
 
 @font-face {
-  font-family: 'Montserrat-bold';
-  src: url('../assets/fonts/Montserrat/static/Montserrat-Bold.ttf')
-}
-
-@font-face {
-  font-family: 'Montserrat-regular';
-  src: url('../assets/fonts/Montserrat/static/Montserrat-Regular.ttf')
+  font-family: "Lora";
+  src: url("../assets/fonts/Lora/static/Lora-Regular.ttf");
 }
 
 .scroll-item:hover {

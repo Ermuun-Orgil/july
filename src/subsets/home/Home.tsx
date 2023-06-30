@@ -30,17 +30,24 @@ export const Home = () => {
   const book = "2008 онд хэвлэгдсэн БҮҮ МАРТ номны хэсгээс"
   const tsogtbayrName = "Шог зураач С.Цогтбаяр"
   const elbegzayaName = "Гамма агентлагийн гүйцэтгэх захирал Л.Элбэгзаяа"
+  const purpose = "Сайн байцгаана уу эрхэм уншигч, гэрэл зургийн хорхойтнуудаа. Манай баг хамт олон нь Монголын түүхийг гэрэл зургийн хальсанд буулгаж яваа Гамма агентлагтай хамтран “Түүхийн албум” гэх төслөө өнөөдөр та бүхэнд хүрч буй энэхүү “БҮҮ МАРТ” үзэсгэлэнгээр эхэлж байна. Бид бүгд өнгөрсөн алдаанаасаа суралцаж, хийж бүтээснээрээ бахархан амьдардаг билээ. Бид төслөө өнөөгийн залуусдаа эцэг эх нь юун дээр алдаж, бидний төлөө юуг бүтээн тэмцэж явсныг ямар нэгэн нэмэлт хачиргүйгээр хүргэж та бүхэн минь 1-йиг тунгаан 2-ыг ойлгоосой гэж хүсэн эхлүүлж байгаа билээ. Таалан сонирхоно уу.";
 
   return (
     <Box paddingX={5} paddingTop={12} paddingBottom={8}>
       <Box>
         <Stack spacing={8}>
+          <Box>
+            <Typography textAlign={"center"} fontSize={18} fontFamily={"Lora"} flex={1}>{purpose}</Typography>
+          </Box>
+          <Box display={"flex"} justifyContent={"center"}>
+            <Box width={"65%"} borderTop={1} />
+          </Box>
           <Stack spacing={5} direction={screenType === "window" ? "row" : "column"} flexWrap={"wrap"} useFlexGap display={"flex"} justifyContent={"center"} >
             <Box position={"relative"} height={screenType === "mobile" ? 210 : 500} width={screenType === "window" ? "65%" : "100%"}>
               <Image className="home-image" alt="july" src={julyImg} fill style={{ objectFit: "scale-down" }} />
             </Box>
             <Box flex={1}>
-              <Typography fontSize={18} flex={1}>{julyScript}</Typography>
+              <Typography fontSize={18} fontFamily={"Lora"} flex={1}>{julyScript}</Typography>
               <br />
               <Typography fontSize={18} flex={1} fontWeight={600}>{elbegzayaName}</Typography>
             </Box>
@@ -54,18 +61,18 @@ export const Home = () => {
             {screenType === "window" ?
               <>
                 <Box flex={1}>
-                  <Typography fontSize={18} flex={1}>{gammaScript1}</Typography>
-                  <Typography fontSize={18} flex={1}>{gammaScript2}</Typography>
+                  <Typography fontSize={18} fontFamily={"Lora"} flex={1}>{gammaScript1}</Typography>
+                  <Typography fontSize={18} fontFamily={"Lora"} flex={1}>{gammaScript2}</Typography>
                   <br />
-                  <Typography fontSize={18} flex={1}>{gammaScript3}</Typography>
+                  <Typography fontSize={18} fontFamily={"Lora"} flex={1}>{gammaScript3}</Typography>
                   <br />
-                  <Typography fontSize={18} flex={1}>{gammaScript4}</Typography>
+                  <Typography fontSize={18} fontFamily={"Lora"} flex={1}>{gammaScript4}</Typography>
                   <br />
-                  <Typography fontSize={18} flex={1}>{gammaScript5}</Typography>
+                  <Typography fontSize={18} fontFamily={"Lora"} flex={1}>{gammaScript5}</Typography>
                   <br />
-                  <Typography fontSize={18} flex={1}>{gammaScript6}</Typography>
+                  <Typography fontSize={18} fontFamily={"Lora"} flex={1}>{gammaScript6}</Typography>
                   <br />
-                  <Typography fontSize={18} flex={1}>{gammaScript7}</Typography>
+                  <Typography fontSize={18} fontFamily={"Lora"} flex={1}>{gammaScript7}</Typography>
                   <br />
                   <Typography fontSize={18} flex={1}>{book}</Typography>
                   <Typography fontSize={18} flex={1} fontWeight={600}>{tsogtbayrName}</Typography>
