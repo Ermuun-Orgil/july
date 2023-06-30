@@ -33,11 +33,11 @@ export const Home = () => {
   const purpose = "Сайн байцгаана уу эрхэм уншигч, гэрэл зургийн хорхойтнуудаа. Манай баг хамт олон нь Монголын түүхийг гэрэл зургийн хальсанд буулгаж яваа Гамма агентлагтай хамтран “Түүхийн албум” гэх төслөө өнөөдөр та бүхэнд хүрч буй энэхүү “БҮҮ МАРТ” үзэсгэлэнгээр эхэлж байна. Бид бүгд өнгөрсөн алдаанаасаа суралцаж, хийж бүтээснээрээ бахархан амьдардаг билээ. Бид төслөө өнөөгийн залуусдаа эцэг эх нь юун дээр алдаж, бидний төлөө юуг бүтээн тэмцэж явсныг ямар нэгэн нэмэлт хачиргүйгээр хүргэж та бүхэн минь 1-йиг тунгаан 2-ыг ойлгоосой гэж хүсэн эхлүүлж байгаа билээ. Таалан сонирхоно уу.";
 
   return (
-    <Box paddingX={5} paddingTop={12} paddingBottom={8}>
+    <Box paddingX={5} paddingTop={18} paddingBottom={8}>
       <Box>
         <Stack spacing={8}>
           <Box>
-            <Typography textAlign={"center"} fontSize={18} fontFamily={"Lora"} flex={1}>{purpose}</Typography>
+            <Typography textAlign={"center"} fontSize={16} fontFamily={"Lora"} flex={1}>{purpose}</Typography>
           </Box>
           <Box display={"flex"} justifyContent={"center"}>
             <Box width={"65%"} borderTop={1} />
